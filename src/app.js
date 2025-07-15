@@ -18,4 +18,12 @@ app.use(express.urlencoded({
 }))
 app.use(express.static("public"))
 
-export {app}
+
+// Health Check logic  Route
+import healthCheckRouter from "./routes/healthCheck.routes.js";
+
+app.use("/api/v1/healthCheck", healthCheckRouter);
+
+
+
+export {app} 
